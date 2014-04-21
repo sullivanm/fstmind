@@ -1,10 +1,8 @@
 Fstmind::Application.routes.draw do
-<<<<<<< HEAD
   devise_for :users
-=======
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
->>>>>>> master
+
   get "home/index"
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

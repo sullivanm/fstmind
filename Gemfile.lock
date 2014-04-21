@@ -47,12 +47,9 @@ GEM
       activesupport (>= 3.0.0)
     arel (4.0.2)
     bcrypt (3.1.7)
-<<<<<<< HEAD
-=======
     bourbon (3.2.0)
       sass (~> 3.2)
       thor
->>>>>>> master
     builder (3.1.4)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -99,11 +96,8 @@ GEM
     multi_json (1.9.2)
     mysql2 (0.3.15)
     orm_adapter (0.5.0)
-<<<<<<< HEAD
-=======
     polyamorous (1.0.0)
       activerecord (>= 3.0)
->>>>>>> master
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
