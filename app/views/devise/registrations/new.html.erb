@@ -22,12 +22,12 @@
  
   <div class="field">
     <%= f.label :industry %><br>
-    <%= f.collection_select :industry_id, Industry.order(:name), :id, :name, {:prompt => "--Select--"} %>
+    <%= f.collection_select :industry_id, Industry.order(:name), :id, :name, {:prompt => "Select your Industry"} %>
     </div>
 
     
    <div><%= f.label :business_name %><br />
-  <%= f.text_field :business_name %></div>
+  <%= f.text_field :business_name %>.fstmind.com</div>
 
 
   <div><%= f.submit "Sign up" %></div>
