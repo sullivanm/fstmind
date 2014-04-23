@@ -23,5 +23,12 @@ form input[type="text"], form input[type="password"], form input[type="email"], 
     font-size: 0.95em;
     outline: medium none;
     padding: 8px 10px 7px;
-    width: calc(30% - 22px);
+    width: calc(25% - 22px);
+}
+
+select, input[type="file"] {
+    height: 34px;
+    line-height: 30px;
+    width: calc(27.5% - 22px);
+
 }
