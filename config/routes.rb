@@ -1,4 +1,6 @@
 Fstmind::Application.routes.draw do
+  resources :industries
+
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
