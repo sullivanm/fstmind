@@ -15,18 +15,13 @@
   <div><%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
-
   <div><%= f.label :phone %><br />
   <%= f.text_field :phone %></div>
 
- 
-  <div class="field">
-    <%= f.label :industry %><br>
-    <%= f.collection_select :industry_id, Industry.order(:name), :id, :name, {:prompt => "--Select--"} %>
-    </div>
 
-    
-   <div><%= f.label :business_name %><br />
+
+
+  <div><%= f.label :business_name %><br />
   <%= f.text_field :business_name %></div>
 
 
