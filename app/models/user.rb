@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
-  after_create :send_welcome_email 
+  after_create :send_welcome_email
+
+  belongs_to :industry 
   
   private
     def send_welcome_email

@@ -1,6 +1,6 @@
 Fstmind::Application.routes.draw do
-  resources :batts
 
+  resources :industries
   devise_for :users
   
   devise_for :admin_users, ActiveAdmin::Devise.config
