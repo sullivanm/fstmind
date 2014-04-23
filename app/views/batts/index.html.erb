@@ -1,0 +1,53 @@
+<h1>Listing batts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Playerid</th>
+      <th>Yearid</th>
+      <th>League</th>
+      <th>Teamid</th>
+      <th>G</th>
+      <th>Ab</th>
+      <th>R</th>
+      <th>H</th>
+      <th>2b</th>
+      <th>3b</th>
+      <th>Hr</th>
+      <th>Rbi</th>
+      <th>Sb</th>
+      <th>Cs</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @batts.each do |batt| %>
+      <tr>
+        <td><%= batt.playerID %></td>
+        <td><%= batt.yearID %></td>
+        <td><%= batt.league %></td>
+        <td><%= batt.teamID %></td>
+        <td><%= batt.G %></td>
+        <td><%= batt.AB %></td>
+        <td><%= batt.R %></td>
+        <td><%= batt.H %></td>
+        <td><%= batt.2B %></td>
+        <td><%= batt.3B %></td>
+        <td><%= batt.HR %></td>
+        <td><%= batt.RBI %></td>
+        <td><%= batt.SB %></td>
+        <td><%= batt.CS %></td>
+        <td><%= link_to 'Show', batt %></td>
+        <td><%= link_to 'Edit', edit_batt_path(batt) %></td>
+        <td><%= link_to 'Destroy', batt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Batt', new_batt_path %>

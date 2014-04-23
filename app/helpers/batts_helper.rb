@@ -1,0 +1,2 @@
+module BattsHelper
+end
