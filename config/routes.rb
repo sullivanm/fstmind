@@ -1,7 +1,9 @@
-Fstmind::Application.routes.draw do
 
-  resources :industries
-  devise_for :users
+Fstmind::Application.routes.draw do
+  
+    devise_for :users
+  
+    resources :industries
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
