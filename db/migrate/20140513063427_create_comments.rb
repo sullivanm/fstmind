@@ -1,4 +1,5 @@
 class CreateComments < ActiveRecord::Migration
+  drop_table :comments
   def change
     create_table :comments do |t|
       t.integer :post_id
@@ -7,6 +8,6 @@ class CreateComments < ActiveRecord::Migration
       t.timestamps
     end
     add_index :comments, :post_id
-    add_index :user
+    #add_index :user
   end
 end
