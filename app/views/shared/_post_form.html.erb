@@ -23,7 +23,8 @@
         <p class> <strong><%= post.user.first_name %></strong></p>
         <h3><%= post.content %> </h3>
         <%= image_tag post.image %>
-        <%= link_to post.comments.count, post %>Comments
+        </div>
+        <div>
         <h4>Comments</h4>
         <% for comment in post.comments %>
           <div id="comments">
