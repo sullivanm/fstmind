@@ -2,7 +2,7 @@
 	<aside class="span1">
      <button id="show">Add Image</button> 
     </aside>
-<%= form_for Post.new, :html => {:multipart => true} do |f| %>
+    <%= form_for Post.new, :html => {:multipart => true} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="editor">
     <%= f.text_area :content, size: '100', placeholder: "New Post.." %>
@@ -14,6 +14,22 @@
   
 <% end %>
 </div>
+
+<div class = 'container'>
+  <div class = 'row' >
+    <% @posts.each do |post| %>
+    <div class = 'col-md-3'>
+      <div class = 'thumbnail'>
+        <p class> <strong><%= post.user.first_name %></strong></p>
+        <h3><%= post.content %> </h3>
+        <%= image_tag post.image %>
+        <%= link_to post.comments.count, post %>Comments
+      </div>
+    </div>
+    <%end %>
+  </div>
+</div>
+
 
 <script>
 $(document).ready(function(){

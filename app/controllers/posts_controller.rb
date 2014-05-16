@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Post created!"
-      redirect_to @post
+      redirect_to posts_path
     else
       @feed_items = []
       render 'static_pages/home'
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   end
 
   def index
-  @post = Post.all
+  @posts = Post.all
   end
 
   def destroy
