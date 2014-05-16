@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
 
   after_create :send_welcome_email
-
-  belongs_to :industry 
+  belongs_to :industry
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy 
   
   private
     def send_welcome_email

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tbody>
+    <% (Post.new).each do |post| %>
+      <tr>
+        <td><%= post.content %></td>
+        <td><%= post.image %></td>
+        <td><%= link_to 'Show', industry %></td>
+        <td><%= link_to 'Edit', edit_industry_path(industry) %></td>
+        <td><%= link_to 'Destroy', industry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <table>

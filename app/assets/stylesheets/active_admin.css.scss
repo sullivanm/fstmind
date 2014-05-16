@@ -16,19 +16,29 @@
 //
 //   .status_tag { background: #6090DB; }
 
-form input[type="text"], form input[type="password"], form input[type="email"], form input[type="number"], form input[type="url"], form input[type="tel"], form textarea {
+form input[type="text"], form input[type="password"], form input[type="email"], form input[type="number"], form input[type="url"], form input[type="tel"], form input[type="placeholder"],
+form textarea {
     border: 1px solid #C9D0D6;
     border-radius: 3px;
     font-family: Helvetica,Arial,sans-serif;
     font-size: 0.95em;
     outline: medium none;
     padding: 8px 10px 7px;
-    width: calc(25% - 22px);
+    width: auto;
+    
+    
+}
+
+form input[type="submit"] {
+   float: right; 
 }
 
 select, input[type="file"] {
     height: 34px;
     line-height: 30px;
-    width: calc(27.5% - 22px);
+    width: auto(27.5px - 22px);
+}
 
+.tweet_btn{
+  display : none;
 }

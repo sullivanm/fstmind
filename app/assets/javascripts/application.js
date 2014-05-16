@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-wysiwyg
+//= require jquery-hotkeys
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks

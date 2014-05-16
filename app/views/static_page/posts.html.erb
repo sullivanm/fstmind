@@ -1,0 +1,21 @@
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span2">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+    </aside>
+    <aside class="span10">
+      <section>
+        <%= render 'shared/post_form' %>
+      </section>
+    </aside>
+  </div>
+   
+<% else %>
+<div class="center hero-unit">
+  <h2>Welcome to FstMind's Lounge</h2>
+  <h3>Please Sign Up or Sign In</h3>
+
+</div>
+<% end %>

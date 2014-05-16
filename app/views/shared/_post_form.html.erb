@@ -1,0 +1,31 @@
+<div class="row">
+	<aside class="span1">
+     <button id="show">Add Image</button> 
+    </aside>
+<%= form_for Post.new, :html => {:multipart => true} do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="editor">
+    <%= f.text_area :content, size: '100', placeholder: "New Post.." %>
+  </div>
+  <div class='tweet_btn'>
+    <%= f.file_field :image %>
+  </div>
+  <div><%= f.submit "Post", class: "btn btn-large btn-primary" %></div>
+  
+<% end %>
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#show").click(function(){
+    $("div.tweet_btn").show();
+    $("#show").hide();
+  });
+});
+
+$(document).ready(function(){
+$('#editor').wysiwyg();
+});
+</script>
+
+

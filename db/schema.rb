@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423102556) do
+ActiveRecord::Schema.define(version: 20140513063427) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,12 +46,31 @@ ActiveRecord::Schema.define(version: 20140423102556) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "comments", force: true do |t|
+    t.integer  "post_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+
   create_table "industries", force: true do |t|
     t.string   "name"
     t.boolean  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "posts", force: true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
+  end
+
+  add_index "posts", ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -66,10 +85,11 @@ ActiveRecord::Schema.define(version: 20140423102556) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "industry_id"
+    t.string   "name"
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "phone"
+    t.integer  "industry_id"
     t.string   "business_name"
   end
 
