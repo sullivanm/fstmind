@@ -24,13 +24,20 @@ form textarea {
     font-size: 0.95em;
     outline: medium none;
     padding: 8px 10px 7px;
-    width: auto;
-    
+     width: 777px;
     
 }
 
 form input[type="submit"] {
    float: right; 
+}
+
+.comment form input[type="submit"] {
+   float: none; 
+}
+
+.new form input[type="submit"] {
+   float: none; 
 }
 
 select, input[type="file"] {
@@ -46,3 +53,46 @@ select, input[type="file"] {
 .col-md-3:nth-child(4n+1){
     clear:both;
 }
+
+a img {
+    height: auto;
+    max-width: 76%;
+    width: 280px;
+}
+
+#comment_body {
+    margin-bottom: 10px;
+}
+
+#post_content {
+    width: 723px;
+}
+
+#user_first_name  {
+    width: 200px;
+}
+
+#user_first_name  {
+    width: 200px;
+}
+
+#user_last_name  {
+    width: 200px;
+}
+
+#user_email  {
+    width: 200px;
+}
+
+#user_password  {
+    width: 200px;
+}
+
+#user_phone  {
+    width: 200px;
+}
+
+#user_business_name  {
+    width: 200px;
+}
+

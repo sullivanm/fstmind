@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 20140516194436) do
     t.boolean  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "industry_id"
   end
 
   create_table "posts", force: true do |t|

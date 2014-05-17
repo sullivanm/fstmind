@@ -18,33 +18,36 @@
 <div class = 'container'>
   <div class = 'row' >
     <% @posts.each do |post| %>
-    <div class = 'col-md-3'>
       <div class = 'thumbnail'>
-        <p class> <strong><%= post.user.first_name %></strong></p>
-        <h3><%= post.content %> </h3>
-        <%= image_tag post.image %>
+        <div class='gravtar'>
+          <%= gravatar_for(current_user, size: 52) %>
+          <strong><%= post.user.first_name %></strong>
         </div>
-        <div>
-        <h4>Comments</h4>
-        <% for comment in post.comments %>
-          <div id="comments">
-          <%= div_for(comment) do %>
-            <p>
-            <strong><%= comment.user.first_name if comment.user%> Commented <%= time_ago_in_words(comment.created_at) %> ago </strong></br>
-            <%= h(comment.body) %>
-            </p>
+        <h5><%= post.content %> </h5>
+          <%= image_tag post.image %>
+          <%= link_to 'show', post %> | <div class="fb-like" data-href="http://0.0.0.0:3000/posts/#{post_id}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div> | <div class="fb-share-button" data-href="http://0.0.0.0:3000/posts/#{post_id}" data-type="button_count"></div>
+      </div>
+      <div>
+          <h4>Comments</h4>
+            <% for comment in post.comments %>
+            <div id="comments">
+              <%= div_for(comment) do %>
+              <div class='gravtar'><%= gravatar_for(current_user, size: 52) %>
+              <strong><%= comment.user.first_name if comment.user%></strong> Commented <%= time_ago_in_words(comment.created_at) %> ago </br></div>
+              <div class='com'><%= h(comment.body) %></div>
+              <% end %>
             <% end %>
-          <% end %> 
-          </div>
-            <%= form_for [post, Comment.new] do |f| %>
-            <p>
+            </div> 
+      </div>
+      <div class="comment">
+          <%= form_for [post, Comment.new] do |f| %>
+            
               <%= f.text_area :body, size: '100', placeholder: "Comment Here" %>
+              <!-- <%= f.file_field :image %>-->
               <%= f.hidden_field :user_id, :value => current_user.id %>
-            </p>
-            <p><%= f.submit "Add Comment", class: "btn btn-primary" %></p>
+              <%= f.submit "Comment", class: "btn btn-primary" %>
         <% end %>
       </div>
-    </div>
     <%end %>
   </div>
 </div>
